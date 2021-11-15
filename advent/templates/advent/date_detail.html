@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="mt-5">
+  <h2>{{ date.name }}</h2>
+  <p>{{ date.description|safe }}</p>
+  {% if date.image %}
+  <img src="{{ date.image.url }}">
+  {% endif %}
+</div>
+<a href="{% url 'date_list' %}"><button class="btn btn-primary mt-5">Go Back</button></a>
+{% endblock %}

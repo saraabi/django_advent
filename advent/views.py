@@ -26,9 +26,10 @@ class DateList(ListView):
         return calendar
 
 
-class DateDetail(View):
+class DateDetail(DetailView):
+    model = Date
 
-    def get(self, request, **kwargs):
+    def get_object(self, queryset=None):
         day = self.kwargs['day']
         month = self.kwargs['month']
         date = Date.objects.get(date__day=day, date__month=month)
