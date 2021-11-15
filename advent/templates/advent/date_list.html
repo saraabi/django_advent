@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h1> Melanie's Extended Birthday Advent(ure) Calendar</h1>
+<div class="table-responsive">
+  <table class="table table-bordered mt-5">
+    <thead>
+      <tr>
+        <th scope="col">Monday</th>
+        <th scope="col">Tuesday</th>
+        <th scope="col">Wednesday</th>
+        <th scope="col">Thursday</th>
+        <th scope="col">Friday</th>
+        <th scope="col">Saturday</th>
+        <th scope="col">Sunday</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for week in calendar %}
+      <tr>
+        {% for day in week %}
+        <td class="py-5 text-center">{% if day <= today %}<a href="{% url 'date_detail' day=day.day month=day.month %}"><strong>{{ day|date:"M j" }}</strong></a>{% else %}{{ day|date:"M j" }}{% endif %}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
