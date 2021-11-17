@@ -6,19 +6,81 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Shippori+Antique+B1&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <style>
+      body {
+        background-size: cover;
+        background-image: url(https://saraabi-assets.s3.amazonaws.com/xmas_background.jpg);
+      }
+      h1 {
+        font-family: 'Mountains of Christmas', cursive;
+/*        font-size:  55px;*/
+        font-weight:  700;
+      }
+      .btn-success {
+        background-color: #17A398;
+      }
+      .table {
+        font-family: 'Shippori Antique B1', sans-serif;
+      }
+        .table th {
+          font-size: 20px;
+        }
+        .table td {
+/*          background-color: #3D3D3D;*/
+          font-size: 36px;
+          transition: all 0.2s linear;
+        }
+          .table td a {
+            color: #FAFAFA;
+            text-decoration: none;
+            transition: all 0.2s linear;
+          }
+        .table td.Open:hover {
+          background-color: #17A398;
+          --bs-table-accent-bg: #17A398;;
+        }
+        .table td.Open.Today:hover {
+          background-color: #F40076;
+          --bs-table-accent-bg: #F40076;
+        }
+          .table td.Open:hover a {
+            color: #3D3D3D;
+          }
+      @media only screen and (max-width: 900px) {
+        body {
+          background-size: auto;
+        }
+        .w-90-r {
+          width: 90% !important;
+        }
+        .p-1-r {
+          padding: .25rem!important;
+        }
+        .mt-2-r {
+          margin-top: 0.5rem!important;
+        }
+        .table td {
+          font-size: 20px;
+        }
+       
+      }
+    </style>
     <title>Melanie's Extended Advent Calendar</title>
   </head>
   <body>
     <header>
     </header>
-    <main class="w-75 mx-auto pt-3">
-      <h1> Melanie's Extended Birthday Advent(ure) Calendar</h1>
+    <main class="w-75 w-90-r mx-auto pt-5">
+      <h1 class="text-white"> Melanie's Extended Birthday Advent(ure) Calendar</h1>
       {% block body %}{% endblock %}
     </main>
     <footer>
     </footer>
-    <script type="text/javascript">
+<!--     <script type="text/javascript">
       setTimeout(function() {
         $('.Message').fadeOut('slow');
       }, 3000);
@@ -28,6 +90,6 @@
     </script>
      <script type="text/javascript">
       $( 'table' ).footable();
-    </script>
+    </script> -->
   </body>
 </html>

@@ -29,6 +29,11 @@ class DateList(ListView):
 class DateDetail(DetailView):
     model = Date
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['today'] = datetime.date.today()
+        return context    
+
     def get_object(self, queryset=None):
         day = self.kwargs['day']
         month = self.kwargs['month']
