@@ -2,7 +2,8 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['enigmatic-stream-60815.herokuapp.com',]
+ALLOWED_HOSTS = ['enigmatic-stream-60815.herokuapp.com',
+    'mebac.herokuapp.com']
 
 SECURE_SSL_REDIRECT = True
 
