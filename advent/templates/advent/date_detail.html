@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<div class="mt-5">
-  <h2 class="mb-4"><em>{{ date.date }}</em></h2>
+<div class="mt-4">
+  <h2 class="mb-5 text-white"><em>{{ date.date }}</em></h2>
   <button class="btn btn-primary btn-lg btn-success mb-5 w-50 w-90-r" type="button" data-bs-toggle="collapse" data-bs-target="#id_cardCollapse" aria-expanded="false" aria-controls="id_cardCollapse">Open It</button>
   <div class="card collapse" id="id_cardCollapse">
     <div class="card-body">
@@ -10,7 +10,7 @@
         <h3 class="card-title">{{ date.name }}</h3>
         <p>{{ date.description|safe }}</p>
         {% if date.image %}
-        <img src="{{ date.image.url }}">
+        <img class="w-100" src="{{ date.image.url }}">
         {% endif %}
       {% else %}
         <h3 class="card-title">Hey! No peeking ahead!</h3>

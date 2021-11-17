@@ -73,6 +73,25 @@ WSGI_APPLICATION = 'django_advent.wsgi.application'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
+AWS_ACCESS_KEY_ID = get_env_variable('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = get_env_variable('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = get_env_variable('S3_BUCKET')
+AWS_S3_CUSTOM_DOMAIN = '{}.s3.amazonaws.com'.format(
+    AWS_STORAGE_BUCKET_NAME)
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+}
+AWS_LOCATION = 'static'
+AWS_PUBLIC_MEDIA_LOCATION = 'media/public'
+AWS_PRIVATE_MEDIA_LOCATION = 'media/private'
+
+MEDIA_ROOT = BASE_DIR / 'media'
+STATIC_ROOT = BASE_DIR / 'static_root'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',
+]
+
 SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
