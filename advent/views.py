@@ -32,6 +32,7 @@ class DateDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['today'] = datetime.date.today()
+        context['user'] = self.request.user
         return context    
 
     def get_object(self, queryset=None):

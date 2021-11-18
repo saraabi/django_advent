@@ -6,7 +6,7 @@
   <button class="btn btn-primary btn-lg btn-success mb-5 w-50 w-90-r" type="button" data-bs-toggle="collapse" data-bs-target="#id_cardCollapse" aria-expanded="false" aria-controls="id_cardCollapse">Open It</button>
   <div class="card collapse" id="id_cardCollapse">
     <div class="card-body">
-      {% if date.date <= today %}
+      {% if date.date <= today or user.is_authenticated %}
         <h3 class="card-title">{{ date.name }}</h3>
         <p>{{ date.description|safe }}</p>
         {% if date.image %}
