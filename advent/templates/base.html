@@ -53,6 +53,33 @@
           .table td.Open:hover a {
             color: #FAFAFA;
           }
+      .Messages {
+        position: relative;
+        width: 100%;
+        z-index: 100000;
+      }
+      .Message {
+          position: absolute;
+          top: 0;
+          left: 50%;
+          width: 500px;
+          margin-left: -250px;
+          padding: 10px;
+          text-align: center;
+          border-radius: 0 0 4px 4px
+      }
+        .Messages .error {
+            color: #fff;
+            background-color: #F78181;
+        }
+        .Messages .success {
+            color: #FFFFFF;
+            background-color: #3DBD89;
+            cursor: pointer;
+        }
+        .Messages.hide {
+            display: none;
+        }
       @media only screen and (max-width: 900px) {
         body {
           background-size: auto;
@@ -76,6 +103,7 @@
   </head>
   <body>
     <header>
+      {% include 'addins/messages.html' %}
     </header>
     <main class="w-75 w-90-r mx-auto pt-5">
       <h1 class="text-white"><a class="text-white" href="{% url 'date_list' %}">Melanie's Extended Birthday Advent(ure) Calendar</a></h1>
@@ -83,7 +111,7 @@
     </main>
     <footer>
     </footer>
-<!--     <script type="text/javascript">
+    <script type="text/javascript">
       setTimeout(function() {
         $('.Message').fadeOut('slow');
       }, 3000);
@@ -91,7 +119,7 @@
         $('.Message').fadeOut("slow");
       });
     </script>
-     <script type="text/javascript">
+  <!--    <script type="text/javascript">
       $( 'table' ).footable();
     </script> -->
   </body>

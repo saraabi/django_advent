@@ -1,9 +1,11 @@
 import datetime
 
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import redirect, render
 from django.views.generic import View, DetailView, ListView
+from django.urls import reverse
 
-from .models import Date
+from .models import Comment, Date
 
 class DateList(ListView):
     model = Date
@@ -40,3 +42,12 @@ class DateDetail(DetailView):
         month = self.kwargs['month']
         date = Date.objects.get(date__day=day, date__month=month)
         return date
+
+    def post(self, request, **kwargs):
+        if request.POST.get('comment'):
+            date = self.get_object()
+            Comment.objects.create(
+                date=date,
+                comment=request.POST.get('comment'))
+            messages.success(request, 'Message received, thanks!')
+            return redirect(reverse('date_list'))
