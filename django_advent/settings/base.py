@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     'advent',
 ]
 
@@ -98,8 +99,8 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
 EMAIL_USE_TLS = True
-SERVER_EMAIL = 'noreply@adventcal.com'
-DEFAULT_FROM_EMAIL = 'admin@adventcal.com'
+SERVER_EMAIL = 'noreply@mebac.herokuapp.com'
+DEFAULT_FROM_EMAIL = 'admin@mebac.herokuapp.com'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators

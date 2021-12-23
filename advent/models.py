@@ -13,6 +13,7 @@ class Date(models.Model):
         upload_to='files/', blank=True, null=True)
     file = models.FileField(blank=True, null=True)
     is_read = models.BooleanField(default=False)
+    is_commentable = models.BooleanField(default=False)
 
     def __str__(self):
         return self.date.strftime("%Y/%m/%d")
@@ -24,4 +25,4 @@ class Comment(models.Model):
     timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return comment
+        return self.comment

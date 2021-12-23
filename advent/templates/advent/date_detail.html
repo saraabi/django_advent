@@ -12,6 +12,13 @@
         {% if date.image %}
         <img class="w-100" src="{{ date.image.url }}">
         {% endif %}
+        {% if date.is_commentable %}
+        <form action="" method="POST">
+          {% csrf_token %}
+          <textarea name="comment" class="form-control"></textarea>
+          <input type="submit" value="Submit" class="btn btn-primary">
+        </form>
+        {% endif %}
       {% else %}
         <h3 class="card-title">Hey! No peeking ahead!</h3>
       {% endif %}
